@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Grocer Benefits Infographic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .infographic {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c5f7c 0%, #3a7ca5 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .intro {
+            padding: 30px;
+            text-align: center;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .intro p {
+            font-size: 15px;
+            color: #495057;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+        }
+        
+        .benefit-card {
+            padding: 40px 35px;
+            border-right: 1px solid #e9ecef;
+            border-bottom: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card:nth-child(2n) {
+            border-right: none;
+        }
+        
+        .benefit-card:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-color) 0%, var(--accent-color-light) 100%);
+        }
+        
+        .benefit-card:nth-child(1) {
+            --accent-color: #ff6b6b;
+            --accent-color-light: #ff8787;
+        }
+        
+        .benefit-card:nth-child(2) {
+            --accent-color: #4ecdc4;
+            --accent-color-light: #6edcd4;
+        }
+        
+        .benefit-card:nth-child(3) {
+            --accent-color: #ffd93d;
+            --accent-color-light: #ffe066;
+        }
+        
+        .benefit-card:nth-child(4) {
+            --accent-color: #a29bfe;
+            --accent-color-light: #b8b2ff;
+        }
+        
+        .benefit-card:nth-child(5) {
+            --accent-color: #fd79a8;
+            --accent-color-light: #fd9ac4;
+        }
+        
+        .benefit-card:nth-child(6) {
+            --accent-color: #00b894;
+            --accent-color-light: #00d0a0;
+        }
+        
+        .icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 32px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color-light) 100%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .benefit-card p {
+            font-size: 14px;
+            color: #5a6c7d;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-list {
+            list-style: none;
+            margin-top: 12px;
+        }
+        
+        .benefit-list li {
+            font-size: 13px;
+            color: #6c757d;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        .benefit-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2c5f7c 0%, #3a7ca5 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .footer p {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+        
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefit-card {
+                border-right: none;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .header p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <div class="header">
+            <h1>Benefits of Supporting Culturally Specific Grocers in Urban Villages</h1>
+            <p>Why Seattle's planning strategies must prioritize culturally relevant food access alongside density and growth</p>
+        </div>
+        
+        <div class="intro">
+            <p>Culturally specific grocers serve as vital anchors for immigrant and BIPOC communities, providing not just food but cultural connection, economic opportunity, and neighborhood vitality. As Seattle expands its Urban Village Growth Strategy, integrating support for these establishments is essential for achieving true equity and livability.</p>
+        </div>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="icon">🏪</div>
+                <h3>Economic Empowerment</h3>
+                <p>Independent ethnic grocers create pathways to business ownership and economic mobility for immigrant and BIPOC entrepreneurs.</p>
+                <ul class="benefit-list">
+                    <li>Supports local business ownership</li>
+                    <li>Creates community-based jobs</li>
+                    <li>Retains dollars within neighborhoods</li>
+                    <li>Builds generational wealth</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="icon">🌍</div>
+                <h3>Cultural Identity & Belonging</h3>
+                <p>Access to culturally specific ingredients is fundamental to maintaining cultural traditions, family recipes, and community connection.</p>
+                <ul class="benefit-list">
+                    <li>Preserves culinary heritage</li>
+                    <li>Strengthens cultural identity</li>
+                    <li>Fosters intergenerational connection</li>
+                    <li>Reduces cultural displacement</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="icon">🥗</div>
+                <h3>Dietary Health & Nutrition</h3>
+                <p>Culturally relevant food access supports dietary diversity, nutritional preferences, and the social determinants of health.</p>
+                <ul class="benefit-list">
+                    <li>Provides familiar, trusted foods</li>
+                    <li>Supports dietary preferences</li>
+                    <li>Encourages cooking at home</li>
+                    <li>Improves food security outcomes</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="icon">👥</div>
+                <h3>Social Cohesion & Community</h3>
+                <p>Ethnic grocers function as community gathering spaces where neighbors connect, share information, and build social networks.</p>
+                <ul class="benefit-list">
+                    <li>Creates "third places" for gathering</li>
+                    <li>Facilitates community information sharing</li>
+                    <li>Builds cross-cultural understanding</li>
+                    <li>Strengthens neighborhood bonds</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="icon">🚶</div>
+                <h3>Walkability & Urban Vitality</h3>
+                <p>Neighborhood-scale grocers increase foot traffic, activate streets, and contribute to the "eyes on the street" that make communities safer.</p>
+                <ul class="benefit-list">
+                    <li>Generates consistent foot traffic</li>
+                    <li>Activates commercial corridors</li>
+                    <li>Supports walkable neighborhoods</li>
+                    <li>Enhances public safety through presence</li>
+                </ul>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="icon">⚖️</div>
+                <h3>Equity & Anti-Displacement</h3>
+                <p>Protecting and incentivizing culturally rooted businesses helps prevent commercial displacement and maintains neighborhood character during growth.</p>
+                <ul class="benefit-list">
+                    <li>Resists commercial gentrification</li>
+                    <li>Maintains neighborhood identity</li>
+                    <li>Provides affordable food options</li>
+                    <li>Supports equitable development</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>A Call to Action</h3>
+            <p>Seattle's Urban Village Growth Strategy must move beyond asking "Is there a grocery store?" to asking "Does this grocery serve the cultural needs of the community?" By integrating culturally specific food access into planning metrics, funding incentive programs, and conducting neighborhood impact assessments, Seattle can build denser neighborhoods that truly serve all residents.</p>
+        </div>
+    </div>
+</body>
+</html>
